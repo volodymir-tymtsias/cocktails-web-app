@@ -8,9 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        'main-page': '#f6f6f6',
+        'space': '#484a47ff',
+        'gray': '#5c6d70ff',
+        'rose': '#a37774ff',
+        'salmon': '#e88873ff',
+        'melon': '#e0ac9dff',
       },
     },
   },

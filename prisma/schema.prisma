@@ -12,3 +12,72 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id              String     @id @default(uuid())
+  name            String
+  email           String
+  salt            String
+  hashed_password String
+  cocktails       Cocktail[]
+  token           Token?
+
+  @@map("users")
+}
+
+model Token {
+  id           String @id @default(uuid())
+  token        String
+  refreshToken String
+  userId       String @unique
+  user         User   @relation(fields: [userId], references: [id])
+
+  @@map("tokens")
+}
+
+model Cocktail {
+  id           String  @id @default(uuid())
+  user         User?   @relation(fields: [userId], references: [id])
+  userId       String?
+  idApi        String?
+  CretedByUser Boolean
+  name         String
+  iba          String
+  category     String
+  alcoholic    String
+  glass        String
+  instructions String
+  drinkThumb   String
+  ingredient1  String
+  ingredient2  String
+  ingredient3  String
+  ingredient4  String
+  ingredient5  String
+  ingredient6  String
+  ingredient7  String
+  ingredient8  String
+  ingredient9  String
+  ingredient10 String
+  ingredient11 String
+  ingredient12 String
+  ingredient13 String
+  ingredient14 String
+  ingredient15 String
+  measure1     String
+  measure2     String
+  measure3     String
+  measure4     String
+  measure5     String
+  measure6     String
+  measure7     String
+  measure8     String
+  measure9     String
+  measure10    String
+  measure11    String
+  measure12    String
+  measure13    String
+  measure14    String
+  measure15    String
+
+  @@map("cocktails")
+}
