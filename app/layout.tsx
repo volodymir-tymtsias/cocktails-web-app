@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
-  title: 'Cocktails Web App',
+  title: 'Cocktails DB',
   description:
     'A web app that allows users to search for cocktail recipes, store favorite ones and add new ones to DB',
+  icons: {
+    icon: '/assets/icons/favicon.ico', // /public path
+  },
 };
 
 export default function RootLayout({
@@ -17,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

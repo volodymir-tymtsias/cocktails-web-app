@@ -9,15 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        dangrek: ['Dangrek', 'sans-serif'],
+        preahvihear: ['Preahvihear', 'sans-serif'],
       },
       colors: {
-        'main-page': '#f6f6f6',
-        'space': '#484a47ff',
-        'gray': '#5c6d70ff',
-        'rose': '#a37774ff',
-        'salmon': '#e88873ff',
-        'melon': '#e0ac9dff',
+        'light-gray': '#f6f6f6',
+        'outer-space': '#484a47',
+        'paynes-gray': '#5c6d70',
+        'old-rose': '#a37774',
+        'salmon': '#e88873',
+        'melon': '#e0ac9d',
       },
     },
   },
