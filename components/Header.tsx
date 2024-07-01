@@ -2,9 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { UilBars, UilMultiply } from '@iconscout/react-unicons';
 import { useState } from 'react';
 import HeaderMenu from './HeaderMenu';
+import MultiplyIcon from '../public/images/icons/multiply.svg';
+import BarsIcon from '../public/images/icons/bars.svg';
 
 const Header = () => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
@@ -22,14 +23,14 @@ const Header = () => {
 
       <HeaderMenu />
 
-      <div className="relative flex md:hidden" onClick={menuIsOpenHandler}>
+      <div className="relative flex md:hidden">
         {mobileMenuIsOpen ? (
-          <>
-            <UilMultiply size="30" color="#fff" />
-            <HeaderMenu isMobile setMobileMenuIsOpen={setMobileMenuIsOpen} mobileMenuIsOpen={mobileMenuIsOpen} />
-          </>
+          <MultiplyIcon className="open_menu_icon" onClick={menuIsOpenHandler}/>
         ) : (
-          <UilBars size="30" color="#fff" />
+          <BarsIcon className="open_menu_icon" onClick={menuIsOpenHandler}/>
+        )}
+        {mobileMenuIsOpen && (
+          <HeaderMenu isMobile setMobileMenuIsOpen={setMobileMenuIsOpen} mobileMenuIsOpen={mobileMenuIsOpen} />
         )}
       </div>
     </header>

@@ -42,3 +42,11 @@ body {
 .header_btn {
   @apply flex h-10 items-center gap-1 text-center font-preahvihear text-base text-white transition-colors duration-300 hover:text-salmon;
 }
+
+.icons {
+  @apply h-6 w-6 fill-current;
+}
+
+.open_menu_icon {
+  @apply h-7 w-7 fill-white;
+}

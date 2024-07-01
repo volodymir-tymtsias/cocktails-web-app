@@ -1,8 +1,9 @@
 'use client';
 
-import { UilHeart, UilPlus } from '@iconscout/react-unicons';
 import classNames from 'classnames';
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+import HeartIcon from '../public/images/icons/heart.svg';
+import PlusIcon from '../public/images/icons/plus.svg';
 
 type Props = {
   isMobile?: boolean;
@@ -44,14 +45,14 @@ const HeaderMenu: React.FC<Props> = ({ isMobile, setMobileMenuIsOpen, mobileMenu
       >
         <li>
           <button type="button" className="header_btn">
-            <UilHeart size="24" color="currentColor" />
+            <HeartIcon className="icons"/>
             My list
           </button>
         </li>
 
         <li>
           <button type="button" className="header_btn">
-            <UilPlus size="24" color="currentColor" />
+            <PlusIcon className="icons"/>
             Add new
           </button>
         </li>
