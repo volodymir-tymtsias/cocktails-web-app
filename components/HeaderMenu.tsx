@@ -32,8 +32,8 @@ const HeaderMenu: React.FC<Props> = ({ isMobile, setMobileMenuIsOpen, mobileMenu
   return (
     <nav
       className={classNames({
-        'hidden md:flex': !isMobile,
-        'absolute right-0 top-9 z-10 flex md:hidden': isMobile,
+        'hidden lg:flex': !isMobile,
+        'absolute right-0 top-9 z-10 flex lg:hidden': isMobile,
       })}
       ref={menuRef}
     >
@@ -58,7 +58,7 @@ const HeaderMenu: React.FC<Props> = ({ isMobile, setMobileMenuIsOpen, mobileMenu
         </li>
 
         <li>
-          <button type="button" className="header_btn-border">
+          <button type="button" className="btn_border px-10">
             Log out
           </button>
         </li>

@@ -4,11 +4,7 @@ import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Cocktails DB',
-  description:
-    'A web app that allows users to search for cocktail recipes, store favorite ones and add new ones to DB',
-  icons: {
-    icon: '/assets/icons/favicon.ico', // /public path
-  },
+  description: 'A web app that allows users to search for cocktail recipes, store favorite ones and add new ones to DB',
 };
 
 export default function RootLayout({
@@ -18,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-light-gray lg:bg-gradient-to-r lg:from-paynes-gray lg:from-50% lg:to-light-gray lg:to-50%">
         <Header />
         {children}
       </body>

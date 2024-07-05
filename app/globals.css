@@ -24,19 +24,13 @@ body {
   margin: 0;
   padding: 0;
 }
-/* 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 .logo_text {
   @apply font-preahvihear text-2xl font-bold text-white;
 }
 
-.header_btn-border {
-  @apply flex h-10 w-max items-center rounded-lg border-2 border-white px-10 text-center font-preahvihear text-base text-white transition-colors duration-300 hover:border-salmon hover:bg-salmon hover:text-black;
+.btn_border {
+  @apply flex h-10 w-max items-center rounded-lg border-2 border-white text-center font-preahvihear text-base text-white transition-colors duration-300 hover:border-salmon hover:bg-salmon hover:text-black;
 }
 
 .header_btn {
@@ -47,6 +41,22 @@ body {
   @apply h-6 w-6 fill-current;
 }
 
-.open_menu_icon {
-  @apply h-7 w-7 fill-white;
+.height_container {
+  min-height: calc(100vh - 80px);
+}
+
+.text_input {
+  @apply h-12 w-full rounded-lg border-[3px] border-gray-300 p-4 text-base text-gray-900 outline-none transition-colors duration-300 placeholder:text-slate-400 hover:border-melon focus:border-salmon active:border-salmon disabled:hover:border-gray-300;
+}
+
+.radio_input {
+  @apply h-5 w-5 appearance-none rounded-full border-2 transition-colors duration-300 hover:border-melon;
+}
+
+.radio_label {
+  @apply cursor-pointer items-center font-dangrek text-base tracking-wide transition-colors duration-300 hover:text-melon;
+}
+
+.text_error {
+  @apply font-dangrek text-base tracking-wide text-red-400;
 }
