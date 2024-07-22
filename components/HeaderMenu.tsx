@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 import HeartIcon from '../public/images/icons/heart.svg';
 import PlusIcon from '../public/images/icons/plus.svg';
+import { useOutsideClick } from '@/app/hooks';
 
 type Props = {
   isMobile?: boolean;
@@ -14,20 +15,26 @@ type Props = {
 const HeaderMenu: React.FC<Props> = ({ isMobile, setMobileMenuIsOpen, mobileMenuIsOpen }) => {
   const menuRef: React.RefObject<HTMLElement> = useRef(null);
 
-  const handleClick = (e: MouseEvent) => {
-    if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-      if (mobileMenuIsOpen && setMobileMenuIsOpen) {
-        setMobileMenuIsOpen(false);
-      }
+  useOutsideClick(menuRef, () => {
+    if (mobileMenuIsOpen && setMobileMenuIsOpen) {
+      setMobileMenuIsOpen(false);
     }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClick);
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
-    };
   });
+
+  // const handleClick = (e: MouseEvent) => {
+  //   if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+  //     if (mobileMenuIsOpen && setMobileMenuIsOpen) {
+  //       setMobileMenuIsOpen(false);
+  //     }
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   document.addEventListener('mousedown', handleClick);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClick);
+  //   };
+  // });
 
   return (
     <nav

@@ -30,7 +30,7 @@ body {
 }
 
 .btn_border {
-  @apply flex h-10 w-max items-center rounded-lg border-2 border-white text-center font-preahvihear text-base text-white transition-colors duration-300 hover:border-salmon hover:bg-salmon hover:text-black;
+  @apply flex h-10 items-center justify-center truncate rounded-lg border-2 border-white font-preahvihear text-base text-white transition-colors duration-300 hover:border-salmon hover:bg-salmon hover:text-black disabled:bg-gray-400 disabled:placeholder:text-gray-200 disabled:hover:border-white disabled:hover:text-white;
 }
 
 .header_btn {
@@ -46,15 +46,27 @@ body {
 }
 
 .text_input {
-  @apply h-12 w-full rounded-lg border-[3px] border-gray-300 p-4 text-base text-gray-900 outline-none transition-colors duration-300 placeholder:text-slate-400 hover:border-melon focus:border-salmon active:border-salmon disabled:hover:border-gray-300;
+  @apply h-10 w-full rounded-lg border-[2px] border-gray-300 bg-light-gray px-4 font-dangrek text-base text-gray-900 outline-none transition-colors duration-300 placeholder:text-slate-500 hover:border-melon focus:border-salmon active:border-salmon disabled:bg-gray-400 disabled:placeholder:text-gray-200 disabled:hover:border-gray-300;
 }
+
+.dropdown_input {
+  @apply absolute z-10 mt-1 flex max-h-44 w-full flex-col items-center overflow-auto rounded-lg border-[2px] border-gray-300 bg-light-gray py-1.5 font-dangrek text-base text-gray-900 outline-none transition-colors duration-300 hover:border-melon focus:border-salmon active:border-salmon;
+}
+
+.dropdown_item {
+  @apply relative flex h-10 w-full shrink-0 cursor-default select-none items-center pl-4 pr-9 hover:bg-melon;
+}
+/* 
+.dropdown_item:hover :last-child {
+  @apply text-white;
+} */
 
 .radio_input {
   @apply h-5 w-5 appearance-none rounded-full border-2 transition-colors duration-300 hover:border-melon;
 }
 
 .radio_label {
-  @apply cursor-pointer items-center font-dangrek text-base tracking-wide transition-colors duration-300 hover:text-melon;
+  @apply cursor-pointer items-center font-preahvihear text-base tracking-wide transition-colors duration-300 hover:text-melon;
 }
 
 .text_error {
